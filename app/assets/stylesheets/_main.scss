@@ -42,17 +42,49 @@
   }
   &_contents{
     height: 540px;
-    display: grid;
-    gap: 26px;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 15px;
-    margin-bottom: 80px;
-    margin-left: 16px;
+    // display: grid;
+    // gap: 26px;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // margin-top: 15px;
+    // margin-bottom: 80px;
+    // margin-left: 16px;
 
     &_post{
-      width: 425px;
+      width: 1199px;
       height: 284px;
-      box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+      border-radius: 10px;
+      .contents.row{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 15px;
+        margin-bottom: 80px;
+        margin-left: 110px;
+        .content_post{
+          height: 300px;
+          width: 100%;
+          padding-top: 50x;
+          box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+          border-radius: 10px;
+          position: relative;
+        }
+         .content_sentence{
+          display: flex;
+          width: 80%;
+          justify-content: space-between;
+          margin-top: 15px;
+          margin-left: 42px;
+          padding-right: 42px;
+          background-color: #deb068;
+          color:#202020;
+          border-radius: 30px;
+          position: absolute;
+          top: 295px;
+          
+        }
+      }
     }
   }
 }

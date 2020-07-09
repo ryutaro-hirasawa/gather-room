@@ -8,16 +8,20 @@
 
   .main_contents
     .main_contents_post
-      %img{:src => "https://lh3.googleusercontent.com/proxy/vj7m1ryR-CDKaxsi_jF6AfMSNC-aDyc2T9q2nEhFnYLyr81pArthzvDSgTzbtrVGjoyRehvx0BtFwB9eC7iyjMbhb9QgN4CxLPRCdzjaNL-b3IMMGhydoWhgk7uP"}/
-    
-    .main_contents_post
-      %img{:src => "https://lh3.googleusercontent.com/proxy/vj7m1ryR-CDKaxsi_jF6AfMSNC-aDyc2T9q2nEhFnYLyr81pArthzvDSgTzbtrVGjoyRehvx0BtFwB9eC7iyjMbhb9QgN4CxLPRCdzjaNL-b3IMMGhydoWhgk7uP"}/
-    
-    .main_contents_post
-      %img{:src => "https://lh3.googleusercontent.com/proxy/vj7m1ryR-CDKaxsi_jF6AfMSNC-aDyc2T9q2nEhFnYLyr81pArthzvDSgTzbtrVGjoyRehvx0BtFwB9eC7iyjMbhb9QgN4CxLPRCdzjaNL-b3IMMGhydoWhgk7uP"}/
-
-    .main_contents_post
-      %img{:src => "https://lh3.googleusercontent.com/proxy/vj7m1ryR-CDKaxsi_jF6AfMSNC-aDyc2T9q2nEhFnYLyr81pArthzvDSgTzbtrVGjoyRehvx0BtFwB9eC7iyjMbhb9QgN4CxLPRCdzjaNL-b3IMMGhydoWhgk7uP"}/
-    
-    .main_contents_post
-      %img{:src => "https://lh3.googleusercontent.com/proxy/vj7m1ryR-CDKaxsi_jF6AfMSNC-aDyc2T9q2nEhFnYLyr81pArthzvDSgTzbtrVGjoyRehvx0BtFwB9eC7iyjMbhb9QgN4CxLPRCdzjaNL-b3IMMGhydoWhgk7uP"}/
+      .contents.row
+        -@posts.each do |post|
+          .content_post{:style => "background-image: url(#{post.image});"}
+            .more
+              -# %span= image_tag 'arrow_top.png'
+              %ul.more_list
+                %li
+                  = link_to "/posts/#{post.id}", method: :get, class: "icon" do
+                    %i.fas.fa-info-circle
+                -# %li
+                -#   = link_to '削除', "/posts/#{post.id}", method: :delete
+                -# %li
+                -#   = link_to '編集', "/posts/#{post.id}/edit", method: :get
+            .content_sentence
+              %p= simple_format(post.text)
+              %span.name
+                = post.name
