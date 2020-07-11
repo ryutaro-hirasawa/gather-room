@@ -3,19 +3,27 @@
     Gather Room
   .menu_right 
     .menu_right_name
-      User : Taro
+      User : 
+      - if user_signed_in?
+        = link_to "#", class: "icon" do
+          =current_user.name
+      - else
+        No User
     .menu_right_function
-
-.contents.row
-  .container
-    = form_for @post do |form|
-      %h3
-        Edit it
-        .container_user
-          = form.text_field :name, placeholder: "User"
-        .container_image
-          = form.text_field :image, placeholder: "Image Url"
-        .container_text
-          = form.text_area :text, placeholder: "text", rows: "2"
-        .container_send
-          = form.submit "SEND"
+      〜Edit Post〜
+.main
+  .main_contents
+    .main_contents_post
+      .contents.row
+        .container
+          = form_for @post do |form|
+            %h3
+              ▼Please enter the following items
+              -# .container_user
+              -#   = form.text_field :name, placeholder: "User"
+              .container_image
+                = form.text_field :image, placeholder: "Image Url"
+              .container_text
+                = form.text_area :text, placeholder: "text", rows: "2"
+              .container_send
+                = form.submit "SEND"

@@ -3,24 +3,41 @@
     Gather Room
   .menu_right 
     .menu_right_name
-      User : Taro
+      User : 
+      - if user_signed_in?
+        = link_to "/users/#{current_user.id}", class: "icon" do
+          =current_user.name
+      - else
+        Not logged in
     .menu_right_function
-    
+      
+      - if user_signed_in? && current_user.id == @post.user_id
+        Menu :
+        = link_to "/posts/#{@post.id}/edit", method: :get, class: "icon" do
+          %i.fas.fa-cog
+        = link_to "/posts/#{@post.id}", method: :delete, class: "icon" do
+          %i.fas.fa-trash-alt
+      - else
+        You can only browse.
 .main
   .main_contents
     .main_contents_post    
       .contents.row
         .content_post{:style => "background-image: url(#{@post.image});"}
-          .more
-            -# %span= image_tag 'arrow_top.png'
-            %ul.more_list
-              %li
-                = link_to "/posts/#{@post.id}/edit", method: :get, class: "icon" do
-                  %i.fas.fa-cog
-              %li
-                = link_to "/posts/#{@post.id}", method: :delete, class: "icon" do
-                  %i.fas.fa-trash-alt
+          -# .more
+          -#   -# %span= image_tag 'arrow_top.png'
+          -#   %ul.more_list
+          -#     %li
+          -#       = link_to "/posts/#{@post.id}/edit", method: :get, class: "icon" do
+          -#         %i.fas.fa-cog
+          -#     %li
+          -#       = link_to "/posts/#{@post.id}", method: :delete, class: "icon" do
+          -#         %i.fas.fa-trash-alt
           .content_sentence
             %p= simple_format(@post.text)
             %span.name
-              = @post.name
+              %a{:href => "/users/#{@post.user.id}"}
+                %span 
+                = @post.user.name
+            -# %span.name
+            -#   = @post.name

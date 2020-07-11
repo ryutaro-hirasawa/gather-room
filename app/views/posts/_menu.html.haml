@@ -5,10 +5,10 @@
     .menu_right_name
       User :
       - if user_signed_in?
-        = link_to "#", class: "icon" do
+        = link_to "/users/#{current_user.id}", class: "icon" do
           =current_user.name
       - else
-        No User
+        Not logged in
     .menu_right_function
       Menu :
       - if user_signed_in?
