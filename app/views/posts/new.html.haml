@@ -3,7 +3,12 @@
     Gather Room
   .menu_right 
     .menu_right_name
-      User : Taro
+      User :
+      - if user_signed_in?
+        = link_to "#", class: "icon" do
+          =current_user.name
+      - else
+        No User
     .menu_right_function
 .main
   .main_contents
