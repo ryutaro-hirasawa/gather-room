@@ -10,6 +10,7 @@
       - else
         No User
     .menu_right_function
+      〜New Post〜
 .main
   .main_contents
     .main_contents_post
@@ -17,9 +18,9 @@
         .container
           = form_for @post do |form|
             %h3
-              Post it
-              .container_user
-                = form.text_field :name, placeholder: "User"
+              ▼Please enter the following items
+              -# .container_user
+              -#   = form.text_field :name, placeholder: "User"
               .container_image
                 = form.text_field :image, placeholder: "Image Url"
               .container_text

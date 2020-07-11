@@ -2,8 +2,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @posts = Post.all 
-    #postsテーブルのレコードを全て取得し、レコード情報を持つ配列のようなオブジェクトを@postsというインスタンス変数に入れ、ビューに渡す
+    @posts = Post.includes(:user)
   end
 
   def new
@@ -35,7 +34,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:name, :image, :text)
+    params.require(:post).permit(:image, :text).merge(user_id: current_user.id)
   end
 
   def move_to_index

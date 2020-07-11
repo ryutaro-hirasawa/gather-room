@@ -1,0 +1,25 @@
+.menu
+  .menu_left
+    Gather Room
+  .menu_right 
+    .menu_right_name
+      User :
+      - if user_signed_in?
+        = link_to "#", class: "icon" do
+          =current_user.name
+      - else
+        Not logged in
+    .menu_right_function
+      %p
+        = @name
+        's Post List
+.main
+  .main_contents
+    .main_contents_post
+      .contents.row
+        -@posts.each do |post|
+          .content_post{:style => "background-image: url(#{post.image});"}
+            .content_sentence
+              %p= simple_format(post.text)
+              -# %span.name
+              -#   = post.name
