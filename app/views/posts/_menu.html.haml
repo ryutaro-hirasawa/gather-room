@@ -3,12 +3,25 @@
     Gather Room
   .menu_right 
     .menu_right_name
-      User : Taro
+      User :
+      - if user_signed_in?
+        = link_to "#", class: "icon" do
+          =current_user.name
+      - else
+        No User
     .menu_right_function
       Menu :
-      = link_to "/posts/new", class: "icon" do
-        %i.fas.fa-camera
-      = link_to "#", class: "icon" do
-        %i.fas.fa-thumbs-up
-      = link_to "#", class: "icon" do
-        %i.fas.fa-sign-out-alt
+      - if user_signed_in?
+        -# .user_nav.grid-6
+        = link_to "/posts/new", class: "icon" do
+          %i.fas.fa-camera
+        = link_to "#", class: "icon" do
+          %i.fas.fa-thumbs-up
+        = link_to " /users/sign_out", method: :delete do
+          %i.fas.fa-sign-out-alt
+      - else
+        -# .grid-6
+        = link_to "/users/sign_in", class: 'icon' do
+          %i.fas.fa-sign-in-alt
+        = link_to "/users/sign_up", class: 'icon' do
+          %i.fas.fa-user-plus

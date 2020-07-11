@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @posts = Post.all 
     #postsテーブルのレコードを全て取得し、レコード情報を持つ配列のようなオブジェクトを@postsというインスタンス変数に入れ、ビューに渡す
@@ -34,5 +36,9 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:name, :image, :text)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
