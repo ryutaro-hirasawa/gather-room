@@ -1,6 +1,7 @@
 .menu
   .menu_left
-    Gather Room
+    = link_to "/", class: "title" do
+      Gather Room
   .menu_right 
     .menu_right_name
       User : 
@@ -23,6 +24,14 @@
   .main_contents
     .main_contents_post    
       .contents.row
+        .content_explanation
+          This is
+          = @post.user.name
+          's work .
+          .content_explanation
+            If you are interested in 
+            = @post.user.name
+            's other work, please click the name.
         .content_post{:style => "background-image: url(#{@post.image});"}
           -# .more
           -#   -# %span= image_tag 'arrow_top.png'
@@ -39,5 +48,3 @@
               %a{:href => "/users/#{@post.user.id}"}
                 %span 
                 = @post.user.name
-            -# %span.name
-            -#   = @post.name

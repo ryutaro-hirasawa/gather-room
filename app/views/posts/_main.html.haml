@@ -1,28 +1,37 @@
 .main
   .main_search
-    .main_search_keyword
-      %input{ type: 'text', class: 'input_keyword', placeholder: 'keyword'}
-    .main_search_btn
-      = link_to '#', class: 'send_btn' do
-        %i.fas.fa-search
+    -# .main_search_keyword
+      -# = form_tag(search_posts_path,:method => 'get') do
+      -#   = text_field_tag :search
+      -#   = submit_tag 'Search', :name => nil 
+      -# %input{ type: 'text', class: 'input_keyword', placeholder: 'keyword'}
+    -# .main_search_btn
+    -#   = link_to '#', class: 'send_btn' do
+    -#     %i.fas.fa-search
 
   .main_contents
-    .main_contents_post
-      .contents.row
-        -@posts.each do |post|
-          .content_post{:style => "background-image: url(#{post.image});"}
-            .more
-              -# %span= image_tag 'arrow_top.png'
-              %ul.more_list
-                %li
-                  = link_to "/posts/#{post.id}", method: :get, class: "icon" do
-                    .content_post{:style => "background-image: url(#{post.image});"}
-                -# %li
-                -#   = link_to '削除', "/posts/#{post.id}", method: :delete
-                -# %li
-                -#   = link_to '編集', "/posts/#{post.id}/edit", method: :get
-            .content_sentence
-              %p= simple_format(post.text)
-                
-              -# %span.name
-              -#   = post.name
+    - if user_signed_in?
+      .main_contents_post
+        .contents.row
+          -@posts.each do |post|
+            .content_post{:style => "background-image: url(#{post.image});"}
+              .more
+                -# %span= image_tag 'arrow_top.png'
+                %ul.more_list
+                  %li
+                    = link_to "/posts/#{post.id}", method: :get, class: "icon" do
+                      .content_post{:style => "background-image: url(#{post.image});"}
+    - else
+      .sentence
+        Welcome to 'Gather Room' !
+      .sentence2
+        Gather Room is a private exhibition for people who like "photography" and "interior".
+      .sentence2
+        If you are not registered and are interested in our work, why not join us ?
+.footer
+  - if user_signed_in?
+    .pagenate
+      = paginate(@posts)
+  - else
+    .footer_sentence
+      gather room 2020
