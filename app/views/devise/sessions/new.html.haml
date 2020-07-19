@@ -1,12 +1,19 @@
 .menu
   .menu_left
-    Gather Room
+    = link_to "/", class: "title" do
+      Gather Room
   .menu_right 
     .menu_right_name
-      
+      User :
+      - if user_signed_in?
+        = link_to "/users/#{current_user.id}", class: "icon" do
+          =current_user.name
+      - else
+        Not logged in
     .menu_right_function
+      Log In
 .main
-  %h2 Log in
+  %h2 
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :email
