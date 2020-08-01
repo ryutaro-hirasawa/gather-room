@@ -18,23 +18,7 @@
         border-radius: 10px;
       }
     }
-    &_btn{
-      width: 60px;
-      height: 40px;
-      margin-top: 15px;
-      margin-left: 15px;
-      padding: 8px 23px;
-      background-color: #4169e1;
-      border: 1px solid black;
-      border-radius: 30px;
-      cursor: pointer;
-      text-decoration: none;
-
-      .send_btn{
-        text-decoration: none;
-        color: #eeeeee;
-      }
-    }
+ 
 
     .send_btn:hover {
       box-shadow: 0 0 40px #dcdcdc;
@@ -140,8 +124,32 @@
   list-style: none;
 }
 
-a{
-  color: blue;
+.input{
+  height: 60px;
+  width: 350px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: 2px solid black;
+}
+
+.send_btn{
+  width: 160px;
+  height: 40px;
+  margin-top: 15px;
+  margin-left: 85px;
+  padding: 8px 23px;
+  background-color: #4169e1;
+  border: 1px solid black;
+  border-radius: 30px;
+  cursor: pointer;
   text-decoration: none;
-  list-style: none;
+}
+
+.sign_up_sentence{
+  font-family: cursive;
+  font-size: 28px;
+  font-weight: bold;
+}
+.title{
+  text-decoration: none;
 }
