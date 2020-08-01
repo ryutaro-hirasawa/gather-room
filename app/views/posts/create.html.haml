@@ -1,14 +1,16 @@
 .menu
   .menu_left
-    Gather Room
+    = link_to "/", class: "title" do
+      Gather Room
   .menu_right 
     .menu_right_name
-      User : Taro
+      
     .menu_right_function
-    
-.contents.row
-  .success
-    %h3
-      Thank you for posting!
-  .rerurn
-    %a.btn{:href => "/posts"} Return to list of posts.
+.main
+  .main_contents    
+    .contents.row
+      .empty
+      .sentence
+        Thank you for posting!
+      .sentence
+        Click the title to return to the top page!

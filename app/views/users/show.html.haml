@@ -6,7 +6,7 @@
     .menu_right_name
       User :
       - if user_signed_in?
-        = link_to "#", class: "icon" do
+        = link_to "/users/#{current_user.id}", class: "icon" do
           =current_user.name
       - else
         Not logged in
@@ -21,13 +21,7 @@
         -@posts.each do |post|
           .content_post{:style => "background-image: url(#{post.image});"}
             .more
-              -# %span= image_tag 'arrow_top.png'
               %ul.more_list
                 %li
                   = link_to "/posts/#{post.id}", method: :get, class: "icon" do
                     .content_post{:style => "background-image: url(#{post.image});"}
-            -# .content_sentence
-            -#   %p= simple_format(post.text)
-              -# %span.name
-              -#   = post.name
-
