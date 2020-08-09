@@ -28,4 +28,4 @@
               %br/
               = form.text_area :text, placeholder: "text", rows: "2", class:"input"
             .field
-              = form.submit "SEND", class:"send_btn"
+              = form.submit "SEND", class:"send_btn",data: {confirm: "Is it okay to edit a post?"}

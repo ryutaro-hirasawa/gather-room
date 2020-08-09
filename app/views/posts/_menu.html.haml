@@ -15,9 +15,9 @@
         -# .user_nav.grid-6
         = link_to "/posts/new", class: "icon" do
           %i.fas.fa-camera
-        = link_to "#", class: "icon" do
-          %i.fas.fa-thumbs-up
-        = link_to " /users/sign_out", method: :delete do
+        -# = link_to "#", class: "icon" do
+        -#   %i.fas.fa-thumbs-up
+        = link_to " /users/sign_out", method: :delete, data: {confirm: "Is it okay to log out?"} do
           %i.fas.fa-sign-out-alt
       - else
         -# .grid-6
