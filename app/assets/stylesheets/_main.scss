@@ -2,7 +2,7 @@
   background-image: url(https://d1f5hsy4d47upe.cloudfront.net/f2/f2b2bb4988332854732f27b0e7624d4e_t.jpeg);
   height: 100vh;
   overflow: scroll;
-  
+
   &_search{
     display: flex;
 
@@ -10,7 +10,7 @@
       height: 70px;
       padding-top: 15px;
       padding-left: 510px;
-      
+
       .input_keyword{
         padding-left: 5px;
         height: 40px;
@@ -18,7 +18,6 @@
         border-radius: 10px;
       }
     }
- 
 
     .send_btn:hover {
       box-shadow: 0 0 40px #dcdcdc;
@@ -67,12 +66,12 @@
           border-radius: 30px;
           position: absolute;
           top: 295px;
-          
+
         }
         a{
           text-decoration: none;
           color: black;
-          
+
         }
       }
     }
@@ -113,6 +112,12 @@
   text-decoration: none;
   padding-left: 110px;
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.destroy-user{
+  padding-right: 130px;
 }
 .footer_sentence{
   font-size: 20px;
@@ -152,4 +157,9 @@
 }
 .title{
   text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: blue;
 }

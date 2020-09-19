@@ -3,7 +3,7 @@
     -# .main_search_keyword
       -# = form_tag(search_posts_path,:method => 'get') do
       -#   = text_field_tag :search
-      -#   = submit_tag 'Search', :name => nil 
+      -#   = submit_tag 'Search', :name => nil
       -# %input{ type: 'text', class: 'input_keyword', placeholder: 'keyword'}
     -# .main_search_btn
     -#   = link_to '#', class: 'send_btn' do
@@ -32,6 +32,8 @@
   - if user_signed_in?
     .pagenate
       = paginate(@posts)
+      Gathe Room
+      = link_to "退会する",user_path(current_user.id), class: "destroy-user",method: :delete, data: {confirm: "Do you want to proceed with the withdrawal process?？"}
   - else
     .footer_sentence
-      gather room 2020
+      gather room

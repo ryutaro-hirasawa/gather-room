@@ -1,7 +1,7 @@
 .menu
   .menu_left
     Gather Room
-  .menu_right 
+  .menu_right
     .menu_right_name
       User :
       - if user_signed_in?
@@ -19,6 +19,9 @@
         -#   %i.fas.fa-thumbs-up
         = link_to " /users/sign_out", method: :delete, data: {confirm: "Is it okay to log out?"} do
           %i.fas.fa-sign-out-alt
+        = link_to "/users/#{current_user.id}/edit", class: "icon" do
+          %i.fas.fa-user-edit
+
       - else
         -# .grid-6
         = link_to "/users/sign_in", class: 'icon' do
