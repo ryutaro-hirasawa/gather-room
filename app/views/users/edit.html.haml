@@ -1,0 +1,35 @@
+.menu
+  .menu_left
+    = link_to "/", class: "title" do
+      Gather Room
+  .menu_right
+    .menu_right_name
+      User :
+      - if user_signed_in?
+        = link_to "#", class: "icon" do
+          =current_user.name
+      - else
+        No User
+    .menu_right_function
+      〜Edit User〜
+.main
+  .main_contents
+    .main_contents_post
+      .contents.row
+        .empty
+        .container
+          = form_for(current_user) do |f|
+            .sign_up_sentence
+              Please enter the following items.
+            .field
+              .field-label
+                = f.label :name
+              .field-input
+                = f.text_field :name, autofocus: true, class:"input"
+            .field
+              .field-label
+                = f.label :email
+              .field-input
+                = f.email_field :email, class:"input"
+            .actions
+              = f.submit "Update", class: 'btn', class:"send_btn",data: {confirm: "Is it okay to edit a post?"}
