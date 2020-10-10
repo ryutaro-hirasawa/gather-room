@@ -142,12 +142,20 @@
   height: 40px;
   margin-top: 15px;
   margin-left: 85px;
+  margin-bottom: 75px;
   padding: 8px 23px;
   background-color: #4169e1;
   border: 1px solid black;
   border-radius: 30px;
   cursor: pointer;
   text-decoration: none;
+}
+
+.google{
+  border: 1px solid black;
+  padding: 30px 90px;
+  border-radius: 30px;
+  background-color: cadetblue;
 }
 
 .sign_up_sentence{

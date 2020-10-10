@@ -38,3 +38,5 @@
             = f.password_field :Password_confirmation, autocomplete: "new-password",placeholder: "password_confirmation", class:"input"
           .field
             = f.submit "Sign up", class:"send_btn"
+          .field
+            = link_to 'Register with Google', user_google_oauth2_omniauth_authorize_path, method: :post, class:"google"

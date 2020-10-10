@@ -66,3 +66,5 @@ gem 'pry-rails'
 gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
