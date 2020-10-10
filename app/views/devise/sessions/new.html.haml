@@ -34,3 +34,8 @@
               = f.label :remember_me
           .actions
             = f.submit "Log in", class:"send_btn"
+
+          .field
+            = link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, class:"google"
+        - if @sns_id.present?
+          = hidden_field_tag :sns_auth, true
