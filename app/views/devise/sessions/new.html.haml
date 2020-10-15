@@ -35,7 +35,6 @@
           .actions
             = f.submit "Log in", class:"send_btn"
 
-          .field
-            = link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, class:"google"
-        - if @sns_id.present?
-          = hidden_field_tag :sns_auth, true
+          .snslogin
+            = link_to 'Google', user_google_oauth2_omniauth_authorize_path, method: :post, class:"google"
+            = link_to 'Facebook', user_facebook_omniauth_authorize_path, method: :post, class:"facebook"

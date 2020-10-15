@@ -25,18 +25,22 @@
             -# = f.label :Email
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email", class:"input"
-          .field
-            -# = f.label :Password
-            - if @minimum_password_length
-              %em
-                -# (#{@minimum_password_length} characters minimum)
-            %br/
-            = f.password_field :password, autocomplete: "new-password",placeholder: "password (#{@minimum_password_length} characters minimum)", class:"input"
-          .field
-            -# = f.label :Password_confirmation
-            %br/
-            = f.password_field :Password_confirmation, autocomplete: "new-password",placeholder: "password_confirmation", class:"input"
+          - if @sns_id.present?
+            = hidden_field_tag :sns_auth, true
+          - else
+            .field
+              -# = f.label :Password
+              - if @minimum_password_length
+                %em
+                  -# (#{@minimum_password_length} characters minimum)
+              %br/
+              = f.password_field :password, autocomplete: "new-password",placeholder: "password (#{@minimum_password_length} characters minimum)", class:"input"
+            .field
+              -# = f.label :Password_confirmation
+              %br/
+              = f.password_field :Password_confirmation, autocomplete: "new-password",placeholder: "password_confirmation", class:"input"
           .field
             = f.submit "Sign up", class:"send_btn"
-          .field
+          .snslogin
             = link_to 'Register with Google', user_google_oauth2_omniauth_authorize_path, method: :post, class:"google"
+            = link_to 'Register with Facebook', user_facebook_omniauth_authorize_path, method: :post, method: :post, class:"facebook"

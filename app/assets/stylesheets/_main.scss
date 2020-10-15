@@ -150,12 +150,26 @@
   cursor: pointer;
   text-decoration: none;
 }
+.snslogin{
+  display: flex;
+}
 
 .google{
+  width: 100%;
   border: 1px solid black;
-  padding: 30px 90px;
+  padding: 10px 20px;
   border-radius: 30px;
   background-color: cadetblue;
+  text-align: center;
+}
+
+.facebook{
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: palevioletred;
+  text-align: center;
 }
 
 .sign_up_sentence{
