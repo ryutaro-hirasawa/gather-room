@@ -1,6 +1,6 @@
 # Gather-Room
 
-[](https://gyazo.com/6eb3a0990796b3a4c2c560c75f4ad085)
+[![Image from Gyazo](https://i.gyazo.com/700da562de2a580c559c4f30ac321a3f.jpg)](https://gyazo.com/700da562de2a580c559c4f30ac321a3f)
 
 # 概要
 
@@ -12,7 +12,8 @@ Gather-Roomではあなたの自慢の部屋.家具などの写真を投稿し
 
 # 本番環境
 
-https://gatherroom.herokuapp.com/（エラー解消中）
+https://gatherroom.herokuapp.com/
+（エラー解消中）
 
 # 制作背景
 
