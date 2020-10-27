@@ -1,8 +1,8 @@
 # Gather-Room
 
-(https://gyazo.com/6eb3a0990796b3a4c2c560c75f4ad085)
+[](https://gyazo.com/6eb3a0990796b3a4c2c560c75f4ad085)
 
-#　概要
+# 概要
 
 Gather-Roomではあなたの自慢の部屋.家具などの写真を投稿し
 他の人に閲覧してもらうことが可能なWebアプリです。
