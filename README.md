@@ -1,27 +1,51 @@
-# README
+# Gather-Room
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+(https://gyazo.com/6eb3a0990796b3a4c2c560c75f4ad085)
 
-Things you may want to cover:
+#　概要
 
-* Ruby version
+Gather-Roomではあなたの自慢の部屋.家具などの写真を投稿し
+他の人に閲覧してもらうことが可能なWebアプリです。
+閲覧している中で、気になるユーザーがいればその人の投稿を閲覧することも可能です。
 
-* System dependencies
+また、手軽にGoogleアカウント、Facebookアカウントでも登録可能です。
 
-* Configuration
+# 本番環境
 
-* Database creation
+https://gatherroom.herokuapp.com/（エラー解消中）
 
-* Database initialization
+# 制作背景
 
-* How to run the test suite
+1. 自分自身が、写真が好きで家具やインテリグッズに興味があるのでそれらをシェアするサービスを作りたい。
+2. コロナウィルスの影響で在宅勤務が増えてきています。そのため在宅勤務向けの家具・グッズも
+増えてきているので手軽にシェアしてきたい。
 
-* Services (job queues, cache servers, search engines, etc.)
+これらの観点からTECH-CAMPで学んだRuby on Railsを使い本アプリを作成しました。
 
-* Deployment instructions
+# DEMO
 
-* ...
+# 工夫したポイント
+・ログインしたユーザーでなければ写真が閲覧できない
+・投稿したユーザーのみ編集・削除が可能
+・退会時に、データベースらユーザーに紐付いた投稿画像も削除
+・SNSアカウントでのログイン認証(ローカル環境)
+
+# 使用技術(開発環境)
+
+## 使用言語
+HAML
+CSS
+Ruby
+
+## 使用フレームワーク
+Ruby on Rails
+
+# 課題や今後実装したい機能
+課題:2020/10/31時点本番環境でエラー解消中
+
+今後実装したい機能：お気に入り機能・コメント・検索機能の実装
+
+# DB設計
 
 ## usersテーブル
 |Column|Type|Options|
@@ -32,7 +56,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :posts
-- has_many :likes
 
 ## postsテーブル
 |Column|Type|Options|
@@ -42,35 +65,4 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :hashtags, through :hashtags_posts
-- has_many :hashtags_posts
-- has_many :likes
-
-## likesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :post
-
-## hashtagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string||
-
-### Association
-- has_many :posts, through :hashtags_posts
-- has_many :hashtags_posts
-
-## hashtags_postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|hashtag_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :post
-- belongs_to :hashtag
+- belongs_to: users
