@@ -25,6 +25,13 @@ https://gatherroom.herokuapp.com/
 これらの観点からTECH-CAMPで学んだRuby on Railsを使い本アプリを作成しました。
 
 # DEMO
+## deviseを用いたメールアドレスでのログイン認証
+
+[![Image from Gyazo](https://i.gyazo.com/1b8fe694228a4239c9312802b958830b.gif)](https://gyazo.com/1b8fe694228a4239c9312802b958830b)
+
+## ユーザー登録後の画像投稿
+
+[![Image from Gyazo](https://i.gyazo.com/aff6b8335897ffad2717deee4c4acd40.gif)](https://gyazo.com/aff6b8335897ffad2717deee4c4acd40)
 
 # 工夫したポイント
 ・ログインしたユーザーでなければ写真が閲覧できない
